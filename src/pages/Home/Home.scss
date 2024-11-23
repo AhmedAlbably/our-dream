@@ -1,0 +1,20 @@
+// h1 {
+//   font-size: 40px;
+//   font-weight: 900;
+//   background: url("../../images/img.png") no-repeat center center;
+//   background-size: cover;
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   color: transparent;
+// }
+
+header {
+  background-color: #050724;
+  height: 100vh;
+  position: relative;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
