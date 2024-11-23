@@ -25,22 +25,17 @@
         font-weight: 400;
         text-decoration: none;
 
-        &::after {
+        //
+        &::before {
           content: "";
-          background-color: white;
           position: absolute;
           left: 0;
-          width: 0;
-          height: 1px;
-          bottom: 0;
-          transition: 0.3s;
-        }
-
-        &:hover,
-        &.active {
-          &::after {
-            width: 100%;
-          }
+          top: 0;
+          width: 50%;
+          height: 50%;
+          border: 1px solid;
+          border-color: hsl(210.8deg 96.58% 77.06%) transparent transparent
+            hsl(210.8deg 96.58% 77.06%);
         }
       }
     }
