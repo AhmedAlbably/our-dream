@@ -6,7 +6,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="logo">LOGO</div>
 
-      <dv className="links">
+      <div className="links">
         <span className="icon">
           <span></span>
           <span></span>
@@ -43,7 +43,7 @@ function NavBar() {
             </NavLink>
           </li>
         </ul>
-      </dv>
+      </div>
     </nav>
   );
 }
