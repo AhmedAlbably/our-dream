@@ -3,6 +3,8 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Service from "./pages/Service/Service";
 import Contact from "./pages/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faStar } from "@fortawesome/free-regular-svg-icons";
 
@@ -17,6 +19,7 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
