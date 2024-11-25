@@ -1,21 +1,263 @@
-// h1 {
-//   font-size: 40px;
-//   font-weight: 900;
-//   background: url("../../images/img.png") no-repeat center center;
-//   background-size: cover;
-//   -webkit-background-clip: text;
-//   background-clip: text;
-//   color: transparent;
-// }
+.home {
+  > header {
+    background-color: #050724;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    & > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
 
-header {
-  background-color: #050724;
-  overflow-x: hidden;
-  height: 100vh;
-  position: relative;
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
+    .content {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-left: 100px;
+
+      .left-side {
+        width: 60%;
+        h1 {
+          background: url("../../images/bannerHomeHeader.png") no-repeat center
+            center;
+          background-size: cover;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          position: relative;
+          z-index: 10;
+          font-size: 40px;
+          font-weight: 900;
+          line-height: 1.5;
+        }
+
+        p {
+          color: white;
+          max-width: 600px;
+          margin: 40px 0 20px;
+          font: {
+            family: "Abel", sans-serif;
+            size: 20px;
+            weight: 400;
+          }
+          line-height: 1.6;
+        }
+
+        button {
+          background-color: blue;
+          color: white;
+          padding: 10px 40px;
+          font-size: 24px;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+
+      .right-side {
+        position: relative;
+        width: 70%;
+        height: 100%;
+        img {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 80%;
+          height: 100%;
+          translate: 0px 20px;
+
+          &:last-of-type {
+            top: -10px;
+            right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .choose-us {
+    height: 100%;
+    padding: 70px 10px;
+    header {
+      margin-bottom: 30px;
+      h3 {
+        position: relative;
+        font: {
+          family: "Inknut Antiqua", serif;
+          weight: 400;
+        }
+        text-align: center;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 35%;
+          height: 2px;
+          background-color: #0507245d;
+        }
+
+        &::before {
+          left: 5%;
+        }
+
+        &::after {
+          right: 5%;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        font: {
+          family: "Inknut Antiqua", serif;
+          size: 30px;
+        }
+      }
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      .card {
+        background-color: #d9d9d9;
+        width: 376px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 0 5px 0px #504141;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        .image {
+          svg {
+            color: gray;
+            font-size: 50px;
+          }
+        }
+
+        h3 {
+          background: url("../../images/textBackground.png") no-repeat center
+            center;
+          background-size: cover;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  .how-work {
+    background-color: #050724;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    gap: 40px;
+    .left-side {
+      width: 410px;
+      height: 606px;
+      position: relative;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        scale: 0.9;
+
+        z-index: 2;
+        &:last-of-type {
+          z-index: 1;
+          top: -15px;
+          right: -15px;
+          scale: 1;
+        }
+      }
+    }
+
+    .right-side {
+      width: 50%;
+      header {
+        h3 {
+          color: white;
+          position: relative;
+          font: {
+            family: "Inknut Antiqua", serif;
+            size: 20px;
+            weight: 400;
+          }
+          text-align: center;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 35%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.297);
+          }
+
+          &::before {
+            left: 5%;
+          }
+
+          &::after {
+            right: 5%;
+          }
+        }
+      }
+
+      .features {
+        .feature {
+          color: white;
+          display: flex;
+          gap: 10px;
+          margin-bottom: 30px;
+          .num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            font: {
+              family: sans-serif;
+              size: 15px;
+            }
+            border-radius: 50%;
+            border: 1px solid white;
+          }
+
+          .content {
+            margin-top: -11px;
+            h3 {
+              background: url("../../images/textBackground.png") no-repeat -56px -85px;
+              background-size: cover;
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+              font-size: 19px;
+            }
+            p {
+              max-width: 714px;
+              font: {
+                size: 15px;
+                weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
