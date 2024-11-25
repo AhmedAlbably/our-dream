@@ -1,11 +1,36 @@
-import "./Home.scss";
+import { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import pathImgs from "../../images/path";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { motion } from "framer-motion";
+import "./Home.scss";
 
 function Home() {
+  const [width, setWidth] = useState(0);
+  const carouselRef = useRef();
+  useEffect(() => {
+    function sliderWidth() {
+      setWidth(
+        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
+      );
+    }
+
+    let count = 0;
+
+    if (count !== 1) {
+      sliderWidth();
+      count = 1;
+    }
+
+    window.addEventListener("resize", sliderWidth);
+
+    return () => {
+      window.removeEventListener("resize", sliderWidth);
+    };
+  }, []);
+
   return (
     <div className="home">
       <header>
@@ -124,6 +149,217 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="reviews">
+        <h2>REVIEWS</h2>
+        <motion.div className="carousel" ref={carouselRef}>
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            className="inner-carousel"
+          >
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+
+            <div className="review">
+              <header>
+                <div className="info">
+                  <div className="image">
+                    <img src={pathImgs.userImg} alt="" />
+                  </div>
+                  <div className="name-and-email">
+                    <h4 className="name">Ali Ahmed</h4>
+                    <span className="email">Al1124@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="image">
+                  <img src={pathImgs.quote} alt="" />
+                </div>
+              </header>
+
+              <p className="review-content">
+                A freelance site that offers various opportunities in fields of
+                work such as design, programming, and telephone, with a secure
+                payment system and an easy interface, but it requires excellence
+                to manage the fierce competition and bear the bank's currencies.
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );
