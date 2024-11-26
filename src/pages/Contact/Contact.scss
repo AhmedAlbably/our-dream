@@ -1,21 +1,6 @@
 .contact {
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #050724;
-    opacity: 0.7;
-    z-index: 1;
-    border-top-left-radius: 30px; 
-    height: 100vh;
-    width: 100%;
-  }
-
   .top {
-    background-image: url("../../images/2.png");
+    background-image: url("../../images/fuck\ header.png");
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -23,14 +8,101 @@
     width: 100%;
     margin-bottom: 50px;
 
+    .content {
+      
+    }
   }
 
   .bottom {
+    .contact-form {
+      background-color: #ffffff;
+      display: flex;
+      border: 1px solid #ffffff;
+      justify-content: center;
+      gap: 30px;
+      align-items: center;
+      padding: 20px;
+      border-radius: 30px;
+      margin-bottom: 50px 0;
 
+      .contact {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .first-line {
+          display: flex;
+          gap: 20px;
+        }
+
+        .second-line {
+          display: flex;
+          gap: 20px;
+        }
+
+        input {
+          width: 50%;
+          padding: 20px;
+          gap: 20px;
+          border: 1px solid #050724;
+          border-radius: 10px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #050724;
+        }
+
+        textarea {
+          width: 100%;
+          padding: 20px;
+          gap: 10px;
+          border: 1px solid #050724;
+          border-radius: 10px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #050724;
+        }
+        .btn {
+          background-color: #011c2a;
+          color: #ffffff;
+
+          padding: 10px 40px;
+          font-size: 24px;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+
+      .contact-information {
+        position: relative;
+        background-image: url("../../images/3.png");
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+        height: 647px;
+        width: 491px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #050724;
+          opacity: 0.7;
+          z-index: 1;
+          border-radius: 10px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
   }
-
-
 }
-
-
-

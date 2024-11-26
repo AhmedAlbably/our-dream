@@ -1,10 +1,13 @@
+
 import "./Service.scss";
 
 const Service = () => {
   return (
     <section className="services">
+      
 
       <section className="top">
+      
         <div className="overlay"></div>
         <div className="our-services">
           <div className="triangle-left"></div>
