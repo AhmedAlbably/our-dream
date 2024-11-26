@@ -4,23 +4,41 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    @media (max-width: 870px) {
+      height: 790px;
+    }
+
     & > img {
       position: absolute;
       left: 0;
       top: 0;
       z-index: 1;
+      pointer-events: none;
     }
 
     .content {
       display: flex;
       align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 5;
       height: 100%;
       padding-left: 100px;
 
+      @media (max-width: 870px) {
+        height: 60%;
+        flex-direction: column;
+        padding-left: 54px;
+        padding-right: 15px;
+      }
+
       .left-side {
-        width: 60%;
+        width: 50%;
+        @media (max-width: 870px) {
+          width: 100%;
+        }
         h1 {
-          background: url("../../images/bannerHomeHeader.png") no-repeat center
+          background: url("../../images/textBackgroundTwo.png") no-repeat center
             center;
           background-size: cover;
           background-clip: text;
@@ -31,47 +49,94 @@
           font-size: 40px;
           font-weight: 900;
           line-height: 1.5;
+
+          @media (max-width: 1200px) {
+            font-size: 30px;
+          }
+
+          @media (max-width: 1000px) {
+            font-size: 25px;
+          }
+
+          @media (max-width: 870px) {
+            font-size: 24px;
+          }
+
+          @media (max-width: 450px) {
+            font-size: 20px;
+          }
         }
 
         p {
           color: white;
           max-width: 600px;
-          margin: 40px 0 20px;
+          margin: 20px 0 20px;
           font: {
             family: "Abel", sans-serif;
             size: 20px;
             weight: 400;
           }
           line-height: 1.6;
+
+          @media (max-width: 1200px) {
+            font-size: 18px;
+          }
+
+          @media (max-width: 1000px) {
+            font-size: 16px;
+            margin: 20px 0 20px;
+          }
+
+          @media (max-width: 450px) {
+            font-size: 15px;
+          }
         }
 
         button {
           background-color: blue;
           color: white;
+          width: 140px;
           padding: 10px 40px;
           font-size: 24px;
           border-radius: 10px;
           border: none;
           outline: none;
           cursor: pointer;
+
+          @media (max-width: 870px) {
+            display: none;
+          }
         }
       }
 
       .right-side {
-        position: relative;
-        width: 70%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
         height: 100%;
-        img {
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 80%;
-          height: 100%;
-          translate: 0px 20px;
+        @media (max-width: 1370px) {
+          justify-content: center;
+        }
 
-          &:last-of-type {
-            top: -10px;
-            right: 10px;
+        img {
+          display: block;
+          width: 600px;
+          translate: 0px 20px;
+          @media (max-width: 1370px) {
+            width: 500px;
+          }
+
+          @media (max-width: 1040px) {
+            width: 400px;
+          }
+
+          @media (max-width: 870px) {
+            width: 350px;
+          }
+
+          @media (max-width: 460px) {
+            width: 300px;
           }
         }
       }
@@ -160,99 +225,174 @@
 
   .how-work {
     background-color: #050724;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     padding: 30px 0;
-    gap: 40px;
-    .left-side {
-      width: 410px;
-      height: 606px;
-      position: relative;
-      img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        scale: 0.9;
 
-        z-index: 2;
-        &:last-of-type {
-          z-index: 1;
-          top: -15px;
-          right: -15px;
-          scale: 1;
+    > header {
+      width: 90%;
+      margin: 0 auto;
+      h3 {
+        color: white;
+        position: relative;
+        margin-bottom: 30px;
+        font: {
+          family: "Inknut Antiqua", serif;
+          size: 20px;
+          weight: 400;
+        }
+        text-align: center;
+        @media (max-width: 580px) {
+          font-size: 15px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 35%;
+          height: 2px;
+          background-color: rgba(255, 255, 255, 0.297);
+          @media (max-width: 450px) {
+            width: 30%;
+          }
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+
+        @media (min-width: 916px) {
+          display: none;
         }
       }
     }
 
-    .right-side {
-      width: 50%;
-      header {
-        h3 {
-          color: white;
-          position: relative;
-          font: {
-            family: "Inknut Antiqua", serif;
-            size: 20px;
-            weight: 400;
-          }
-          text-align: center;
+    > .content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      overflow: hidden;
+      .left-side {
+        width: 410px;
+        height: 606px;
+        position: relative;
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          scale: 0.9;
 
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 35%;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.297);
-          }
-
-          &::before {
-            left: 5%;
-          }
-
-          &::after {
-            right: 5%;
+          z-index: 2;
+          &:last-of-type {
+            z-index: 1;
+            top: -15px;
+            right: -15px;
+            scale: 1;
           }
         }
       }
 
-      .features {
-        .feature {
-          color: white;
-          display: flex;
-          gap: 10px;
-          margin-bottom: 30px;
-          .num {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 25px;
-            height: 25px;
-            font: {
-              family: sans-serif;
-              size: 15px;
-            }
-            border-radius: 50%;
-            border: 1px solid white;
-          }
+      .right-side {
+        width: 50%;
 
-          .content {
-            margin-top: -11px;
-            h3 {
-              background: url("../../images/textBackground.png") no-repeat -56px -85px;
-              background-size: cover;
-              background-clip: text;
-              -webkit-background-clip: text;
-              color: transparent;
-              font-size: 19px;
+        @media (max-width: 916px) {
+          width: 100%;
+          padding: 20px;
+        }
+
+        header {
+          h3 {
+            color: white;
+            position: relative;
+            font: {
+              family: "Inknut Antiqua", serif;
+              size: 20px;
+              weight: 400;
             }
-            p {
-              max-width: 714px;
+            text-align: center;
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              width: 30%;
+              height: 2px;
+              background-color: rgba(255, 255, 255, 0.297);
+            }
+
+            &::before {
+              left: 5%;
+            }
+
+            &::after {
+              right: 5%;
+            }
+            @media (max-width: 1040px) {
+              font-size: 16px;
+            }
+          }
+          @media (max-width: 916px) {
+            display: none;
+          }
+        }
+
+        .features {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .feature {
+            color: white;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            .num {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 25px;
+              height: 25px;
+              min-width: 25px;
+              min-height: 25px;
               font: {
+                family: sans-serif;
                 size: 15px;
-                weight: 400;
+              }
+              border-radius: 50%;
+              border: 1px solid white;
+            }
+
+            .content {
+              margin-top: -11px;
+              @media (max-width: 500px) {
+                margin-top: -6px;
+              }
+              h3 {
+                background: url("../../images/textBackground.png") no-repeat -56px -85px;
+                background-size: cover;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                font-size: 19px;
+                @media (max-width: 500px) {
+                  font-size: 16px;
+                }
+              }
+              p {
+                max-width: 714px;
+                font: {
+                  size: 15px;
+                  weight: 400;
+                }
+
+                @media (max-width: 500px) {
+                  font-size: 12px;
+                }
               }
             }
           }
@@ -274,6 +414,9 @@
       text-shadow: 3px 3px 10px #050724;
       color: #050724;
       margin-bottom: 20px;
+      @media (max-width: 600px) {
+        font-size: 30px;
+      }
     }
 
     .carousel {
@@ -296,7 +439,12 @@
           padding: 35px;
           border-radius: 35px;
           box-shadow: 0px 0px 20px 9px #1b1d3b;
-        
+
+          @media (max-width: 600px) {
+            min-width: 351px;
+            height: 208px;
+          }
+
           header {
             display: flex;
             justify-content: space-between;
@@ -310,6 +458,11 @@
                 height: 60px;
                 overflow: hidden;
                 border-radius: 50%;
+
+                @media (max-width: 600px) {
+                  width: 40px;
+                  height: 40px;
+                }
                 img {
                   width: 100%;
                   height: 100%;
@@ -323,6 +476,9 @@
                     size: 17px;
                     weight: 400;
                   }
+                  @media (max-width: 600px) {
+                    font-size: 14px;
+                  }
                 }
                 .email {
                   margin-top: -15px;
@@ -330,6 +486,9 @@
                   font: {
                     size: 12px;
                     weight: 400;
+                  }
+                  @media (max-width: 600px) {
+                    font-size: 11px;
                   }
                 }
               }
@@ -343,6 +502,9 @@
           p {
             font-size: 15px;
             line-height: 1.8;
+            @media (max-width: 600px) {
+              font-size: 10px;
+            }
           }
         }
       }

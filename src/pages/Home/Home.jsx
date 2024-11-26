@@ -51,7 +51,6 @@ function Home() {
           </div>
           <div className="right-side">
             <img src={pathImgs.bannerHomeHeader} alt="" />
-            <img src={pathImgs.frameHomeHeader} alt="" />
           </div>
         </div>
       </header>
@@ -93,58 +92,63 @@ function Home() {
       </section>
 
       <section className="how-work">
-        <div className="left-side">
-          <img src={pathImgs.backgroundOne} alt="" />
-          <img src={pathImgs.shadowTwo} alt="" />
-        </div>
+        <header>
+          <h3>Howe work it</h3>
+        </header>
 
-        <div className="right-side">
-          <header>
-            <h3>Howe work it</h3>
-          </header>
+        <div className="content">
+          <div className="left-side">
+            <img src={pathImgs.backgroundOne} alt="" />
+          </div>
 
-          <div className="features">
-            <div className="feature">
-              <span className="num">1</span>
-              <div className="content">
-                <h3>Create your project</h3>
-                <p>
-                  Describe your idea or project with details such as goals,
-                  budget, and timeline to attract the best freelancers
-                </p>
+          <div className="right-side">
+            <header>
+              <h3>Howe work it</h3>
+            </header>
+
+            <div className="features">
+              <div className="feature">
+                <span className="num">1</span>
+                <div className="content">
+                  <h3>Create your project</h3>
+                  <p>
+                    Describe your idea or project with details such as goals,
+                    budget, and timeline to attract the best freelancers
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="feature">
-              <span className="num">2</span>
-              <div className="content">
-                <h3>Browse freelancers</h3>
-                <p>
-                  Browse profiles, past work, and reviews to find the right
-                  person to complete your project
-                </p>
+              <div className="feature">
+                <span className="num">2</span>
+                <div className="content">
+                  <h3>Browse freelancers</h3>
+                  <p>
+                    Browse profiles, past work, and reviews to find the right
+                    person to complete your project
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="feature">
-              <span className="num">3</span>
-              <div className="content">
-                <h3>Start working and collaborating</h3>
-                <p>
-                  Communicate directly with the freelancer, define work stages,
-                  and track progress through our platform with ease
-                </p>
+              <div className="feature">
+                <span className="num">3</span>
+                <div className="content">
+                  <h3>Start working and collaborating</h3>
+                  <p>
+                    Communicate directly with the freelancer, define work
+                    stages, and track progress through our platform with ease
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="feature">
-              <span className="num">4</span>
-              <div className="content">
-                <h3>Pay securely</h3>
-                <p>
-                  Initiate payments securely once you are satisfied with the
-                  work, through our reliable payment system
-                </p>
+              <div className="feature">
+                <span className="num">4</span>
+                <div className="content">
+                  <h3>Pay securely</h3>
+                  <p>
+                    Initiate payments securely once you are satisfied with the
+                    work, through our reliable payment system
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -153,7 +157,11 @@ function Home() {
 
       <section className="reviews">
         <h2>REVIEWS</h2>
-        <motion.div className="carousel" ref={carouselRef}>
+        <motion.div
+          className="carousel"
+          ref={carouselRef}
+          whileTap={{ cursor: "grabbing" }}
+        >
           <motion.div
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
