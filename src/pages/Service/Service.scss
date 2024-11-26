@@ -1,6 +1,6 @@
 // .services {
 //   min-height: 100vh; /* Ensure the section takes at least full viewport height */
-  
+
 //   .top {
 //     background-image: url('../../images/Rectangle69.png');
 //     background-position: center;
@@ -13,78 +13,104 @@
 //     position: relative; /* Set relative positioning to enable absolute positioning of the overlay */
 //     padding: 0 20px;
 //     margin-bottom: 50px;
+
+//     .overlay {
+//       position: absolute; /* Position the overlay on top of the background */
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background-color: rgba(5, 7, 36, 0.7); /* Semi-transparent overlay color */
+//       z-index: 1; /* Ensure the overlay appears above the background image */
+//     }
+
+//     .our-services {
+//       background-color: #FFFFFF; /* White background */
+//       width: 592px; /* Fixed width */
+//       height: 161px; /* Fixed height */
+//       position: absolute;
+//       bottom: -80px; /* Position the box at the bottom of the top section */
+//       left: 50%; /* Center horizontally */
+//       transform: translateX(-50%); /* Adjust to center */
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       z-index: 5; /* Ensure the box is above the overlay */
+//       padding: 20px;
+//       box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+
+//       h1 {
+//         color: #050724; /* Text color */
+//         margin: 0; /* Remove default margin around the h1 */
+//         font-size: 2rem; /* Adjust font size */
+//       }
+
+//       .triangle-left {
+//         position: absolute;
+//         bottom: -50%; /* Position triangle below the box */
+//         left: -10%; /* Adjust position for the left triangle */
+//         z-index: -5;
+//         width: 100px;
+//         height: 100px;
+//         background-color: #FFFFFF; /* Triangle color */
+//         clip-path: polygon(100% 0, 50% 100%, 0% 0); /* Create a triangle shape */
+//         box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2); /* Shadow from the right rib */
+//       }
+
+//       .triangle-right {
+//         position: absolute;
+//         bottom: -50%; /* Position triangle below the box */
+//         right: -10%; /* Adjust position for the right triangle */
+//         z-index: -5;
+//         width: 100px;
+//         height: 100px;
+//         background-color: #FFFFFF; /* Triangle color */
+//         clip-path: polygon(100% 0, 50% 100%, 0% 0); /* Create a triangle shape */
+//         box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.2); /* Shadow from the left rib */
+//       }
+//     }
 //   }
 
-//   /* Overlay style */
-//   .overlay {
-//     position: absolute; /* Position the overlay on top of the background */
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(5, 7, 36, 0.7); /* Semi-transparent overlay color */
-//     z-index: 1; /* Ensure the overlay appears above the background image */
-//   }
-
-//   /* Styling for the 'Our Services' box */
-//   .our-services {
-//     background-color: #FFFFFF; /* White background */
-//     width: 592px; /* Fixed width */
-//     height: 161px; /* Fixed height */
-//     position: absolute;
-//     bottom: -80px; /* Position the box at the bottom of the top section */
-//     left: 50%; /* Center horizontally */
-//     transform: translateX(-50%); /* Adjust to center */
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 2; /* Ensure the box is above the overlay */
+//   .main {
 //     padding: 20px;
-    
-//     /* Adding box shadow to create a subtle effect from the bottom */
-//     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, spread radius, color */
-    
-//     h1 {
-//       color: #050724; /* Text color */
-//       margin: 0; /* Remove default margin around the h1 */
-//       font-size: 2rem; /* Adjust font size */
+//     margin-top: 50px;
+//     display: flex;
+
+//     .up {
+//       font-size: 1.5rem;
+//       font-weight: bold;
+//       text-align: center;
+//       margin-bottom: 20px;
 //     }
 
-//     /* Left triangle */
-//     .triangle-left {
-//       position: absolute;
-//       bottom: -20px; /* Position the triangle slightly outside the bottom */
-//       left: -20px; /* Position it on the left */
-//       width: 0;
-//       height: 0;
-//       border-left: 20px solid transparent; /* Create a triangle with borders */
-//       border-right: 20px solid transparent;
-//       border-top: 20px solid #FFFFFF; /* Triangle pointing upwards */
+//     .separator {
+//       width: 1%;
+//       height: 70px;
+//       background-color: #000000;
+//       margin: 20px auto;
 //     }
 
-//     /* Right triangle */
-//     .triangle-right {
-//       position: absolute;
-//       bottom: -20px; /* Position the triangle slightly outside the bottom */
-//       right: -20px; /* Position it on the right */
-//       width: 0;
-//       height: 0;
-//       border-left: 20px solid transparent;
-//       border-right: 20px solid transparent;
-//       border-top: 20px solid #FFFFFF; /* Triangle pointing upwards */
+//     .down {
+//       font-size: 1rem;
+//       line-height: 1.6;
+//       color: #333;
+//       text-align: center;
+//       padding: 0 20px;
 //     }
+//   }
+
+//   .bottom {
+
 //   }
 // }
 
-
-
-// //! second version of this code 
+// ! the second version of my code
 
 .services {
   min-height: 100vh; /* Ensure the section takes at least full viewport height */
-  
+
   .top {
-    background-image: url('../../images/Rectangle69.png');
+    background-image: url("../../images/Rectangle69.png");
     background-position: center;
     background-size: cover;
     object-fit: cover;
@@ -94,73 +120,184 @@
     align-items: center; /* Vertically and horizontally center content */
     position: relative; /* Set relative positioning to enable absolute positioning of the overlay */
     padding: 0 20px;
-    margin-bottom: 50px;
+    margin-bottom: 50px 0;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(5, 7, 36, 0.7);
+      z-index: 1;
+    }
+
+    .our-services {
+      background-color: #ffffff;
+      width: 592px;
+      height: 161px;
+      position: absolute;
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+      padding: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+      h1 {
+        color: #050724;
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .triangle-left {
+        // position: absolute;
+        // bottom: -50%;
+        // left: -10%;
+        // z-index: -5;
+        // width: 100px;
+        // height: 100px;
+        // background-color: #ffffff;
+        // clip-path: polygon(100% 0, 50% 100%, 0% 0);
+        // box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .triangle-right {
+        // position: absolute;
+        // bottom: -50%;
+        // right: -10%;
+        // z-index: -5;
+        // width: 100px;
+        // height: 100px;
+        // background-color: #ffffff;
+        // clip-path: polygon(100% 0, 50% 100%, 0% 0);
+        // box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.2);
+      }
+    }
   }
 
-  /* Overlay style */
-  .overlay {
-    position: absolute; /* Position the overlay on top of the background */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(5, 7, 36, 0.7); /* Semi-transparent overlay color */
-    z-index: 1; /* Ensure the overlay appears above the background image */
-  }
-
-  /* Styling for the 'Our Services' box */
-  .our-services {
-    background-color: #FFFFFF; /* White background */
-    width: 592px; /* Fixed width */
-    height: 161px; /* Fixed height */
-    position: absolute;
-    bottom: -80px; /* Position the box at the bottom of the top section */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to center */
+  .main {
     display: flex;
+    align-items: center; /* Vertically center content */
     justify-content: center;
-    align-items: center;
-    z-index: 5; /* Ensure the box is above the overlay */
+    margin: 70px 0;
+    height: 200px; /* Medium height */
     padding: 20px;
-    
-    /* Adding box shadow to create a subtle effect from the bottom */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, spread radius, color */
-    
-    h1 {
-      color: #050724; /* Text color */
-      margin: 0; /* Remove default margin around the h1 */
-      font-size: 2rem; /* Adjust font size */
+
+    .up {
+      flex: 1; /* Take up half of the available width */
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
     }
 
-    /* Left triangle */
-    .triangle-left {
-      position: absolute;
-      bottom: -50%;
-      right: -14%;
-      z-index: -5;
-      width: 0;
-      height: 0;
-      
-      background-color: #FFFFFF;
-      clip-path: polygon(100% 0, 50% 100%, 0% 0);
-      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    .separator {
+      width: 2px; /* Narrow separator */
+      height: 60%; /* Full height of the parent container */
+      background-color: #000000;
     }
 
-    /* Right triangle */
-    .triangle-right {
-      position: absolute;
-      bottom: -50%;
-      right: -14%;
-      z-index: -5;
-      width: 0;
-      height: 0;
-      
-      background-color: #FFFFFF;
-      clip-path: polygon(100% 0, 50% 100%, 0% 0);
-      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
-      
+    .down {
+      flex: 1; /* Take up half of the available width */
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      text-align: center;
+      padding: 10px;
+    }
   }
 
-    
+  .bottom {
+    /* Add styles if needed */
+    margin: 50px 0;
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-weight: 400px;
+        font-size: 36px;
+        color: #000000;
+      }
+
+      h3 {
+        font-weight: 400px;
+        font-size: 36px;
+        color: #000000;
+      }
+    }
+
+    .cards {
+      margin: 50px 0;
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      row-gap: 25px;
+    column-gap: 20px;
+      padding: 20px;
+
+      .card {
+        position: relative;
+        border: 1px solid #050724;
+        border-radius: 7px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 9px 0px #050724;
+
+        &:nth-child(even) {
+          background-color: #050724;
+          .title,
+          .description {
+            color: #ffffff;
+          }
+
+          .number {
+            background-color: #ffffff;
+            color: #050724;
+          }
+        }
+
+        .title {
+          color: #050724;
+          font-weight: 800px;
+          font-size: 24px;
+          line-height: 50px;
+        }
+
+        .description {
+          font-weight: 400px;
+          font-size: 16px;
+          line-height: 50px;
+          color: #000000;
+        }
+
+        .number {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #050724;
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: -18px;
+          left: -15px;
+          border: 1px solid;
+        }
+      }
+    }
   }
 }
