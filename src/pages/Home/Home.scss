@@ -92,19 +92,37 @@
           }
         }
 
-        button {
+        a {
           background-color: blue;
           color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 140px;
-          padding: 10px 40px;
+          height: 52px;
           font-size: 24px;
           border-radius: 10px;
-          border: none;
-          outline: none;
           cursor: pointer;
+          transition: 0.3s;
 
           @media (max-width: 870px) {
             display: none;
+          }
+
+          &:hover {
+            box-shadow: 0 0 #0000, 0 0 #0000,
+              0 0 40px 6px rgba(0, 178, 255, 0.7);
+              animation: upDown .1s 0s infinite alternate;
+          }
+
+          @keyframes upDown {
+            0% {
+              translate: 0 10px;
+              scale: 1.4;
+            }
+            100% {
+              translate: 0 -10px;
+            }
           }
         }
       }

@@ -6,11 +6,22 @@ import { faCheck, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { motion } from "framer-motion";
 import "./Home.scss";
+import { Link } from "react-router-dom";
+import mu from "../../audio/mu.mp4";
 
 function Home() {
+  const [isOk, setIsOk] = useState(false);
+  const muR = useRef();
   const [width, setWidth] = useState(0);
   const carouselRef = useRef();
   useEffect(() => {
+    if (isOk) {
+      muR.current.play();
+      muR.current.currentTime = 0;
+    } else {
+      muR.current.pause();
+    }
+
     function sliderWidth() {
       setWidth(
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
@@ -29,10 +40,11 @@ function Home() {
     return () => {
       window.removeEventListener("resize", sliderWidth);
     };
-  }, []);
+  }, [isOk]);
 
   return (
     <div className="home">
+      <video src={mu} loop ref={muR} style={{display: "none"}}></video>
       <header>
         <img src={pathImgs.shadowImg} alt="" />
         <NavBar />
@@ -47,7 +59,13 @@ function Home() {
               Embark on your journey now and bring your projects to life in a
               professional and easy way.
             </p>
-            <button>Start</button>
+            <Link
+              to="/contact"
+              onMouseEnter={() => setIsOk(true)}
+              onMouseLeave={() => setIsOk(false)}
+            >
+              Start
+            </Link>
           </div>
           <div className="right-side">
             <img src={pathImgs.bannerHomeHeader} alt="" />
