@@ -19,7 +19,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/sendemail",
+        "https://our-dream-backend.vercel.app/sendemail",
         form,
         {
           headers: {

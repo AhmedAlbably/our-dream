@@ -2,7 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = 5000;
+const port = 8080 || process.env.PORT;
 
 const cors = require("cors");
 
@@ -106,6 +106,6 @@ app.post("/sendemail", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
