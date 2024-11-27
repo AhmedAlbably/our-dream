@@ -3,18 +3,17 @@ import Navbar from "../../components/NavBar/NavBar";
 const Contact = () => {
   return (
     <section className="contact">
-      
-      <div className="top">
+      <header>
         <Navbar />
-
+        <span className="cover"></span>
         <div className="content">
           <h1 className="title"> Contact Informations</h1>
-          <p className="content">
+          <p>
             Information that allows access to people or companies, such as phone
             number, email, and address.
           </p>
         </div>
-      </div>
+      </header>
 
       <div className="bottom">
         <div className="contact-form">

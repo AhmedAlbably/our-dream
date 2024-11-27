@@ -1,20 +1,18 @@
-
+import Navbar from "../../components/NavBar/NavBar"
 import "./Service.scss";
 
 const Service = () => {
   return (
     <section className="services">
-      
-
-      <section className="top">
-      
+      <header className="top">
+        <Navbar />
         <div className="overlay"></div>
         <div className="our-services">
           <div className="triangle-left"></div>
           <div className="triangle-right"></div>
           <h1>Our Services</h1>
         </div>
-      </section>
+      </header>
 
       <main className="main">
         <div className="up">We have over 20 years of experience</div>
