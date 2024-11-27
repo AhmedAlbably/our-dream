@@ -1,5 +1,6 @@
-import Navbar from "../../components/NavBar/NavBar"
+import Navbar from "../../components/NavBar/NavBar";
 import "./Service.scss";
+import pathImgs from "../../images/path.js"
 
 const Service = () => {
   return (
@@ -8,9 +9,8 @@ const Service = () => {
         <Navbar />
         <div className="overlay"></div>
         <div className="our-services">
-          <div className="triangle-left"></div>
-          <div className="triangle-right"></div>
           <h1>Our Services</h1>
+          <img src={pathImgs.ServicesBanner} alt="" className="services-banner"/>
         </div>
       </header>
 
@@ -25,84 +25,83 @@ const Service = () => {
           levels of quality and meeting our customers’ needs with precision and
           professionalism.
         </div>
+        <div className="separator"></div>
       </main>
 
       <section className="bottom">
-        <div className="title">
-          <p>Service we provide</p>
-          <p>What we do for you</p>
+        <div className="container">
+          <div className="title">
+            <h3>Service we provide</h3>
+            <p>What we do for you</p>
+          </div>
+
+          <div className="cards">
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">1</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">2</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">3</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">4</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">5</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">6</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">7</p>
+            </div>
+
+            <div className="card">
+              <p className="title">Websites and web applications</p>
+              <p className="description">
+                We design and develop websites and web applications that are
+              </p>
+              <p className="number">8</p>
+            </div>
+          </div>
         </div>
-
-        <div className="cards">
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">1</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">2</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">3</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">4</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">5</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">6</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">7</p>
-          </div>
-
-          <div className="card">
-            <p className="title">Websites and web applications</p>
-            <p className="description">
-              We design and develop websites and web applications that are
-            </p>
-            <p className="number">8</p>
-          </div>
-
-        </div>
-
       </section>
-      
     </section>
   );
 };
