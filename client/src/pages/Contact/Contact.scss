@@ -114,6 +114,21 @@
           border-bottom: 1px solid #050724;
         }
 
+        select {
+          padding: 20px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #050724;
+          width: 100%;
+          margin-bottom: 35px;
+
+          option {
+            padding: 10px 20px;
+            border: 1px solid #050724;
+            border-radius: 10px;
+          }
+        }
+
         textarea {
           gap: 10px;
           width: 100%;

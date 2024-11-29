@@ -11,8 +11,12 @@ const Contact = () => {
     lastName: "",
     email: "",
     phone: "",
+    category: "Contact as a",
     message: "",
   });
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
   async function submit(e) {
     e.preventDefault();
@@ -73,16 +77,16 @@ const Contact = () => {
                 placeholder="First Name"
                 value={form.firstName}
                 required
-                onChange={(e) =>
-                  setForm({ ...form, firstName: e.target.value })
-                }
+                name="firstName"
+                onChange={handleChange}
               />
               <input
                 type="text"
                 placeholder="Last Name"
                 value={form.lastName}
                 required
-                onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                name="lastName"
+                onChange={handleChange}
               />
             </div>
 
@@ -92,25 +96,40 @@ const Contact = () => {
                 placeholder="Email"
                 required
                 value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                name="email"
+                onChange={handleChange}
               />
               <input
-                type="number"
+                type="text"
                 placeholder="Phone Number"
+                maxLength="11"
                 required
                 value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                name="phone"
+                onChange={handleChange}
               />
             </div>
+            <select
+              name="category"
+              required
+              value={form.category}
+              onChange={handleChange}
+            >
+              <option value="Contact as a" disabled hidden>
+                Contact as a
+              </option>
+              <option value="client">Client</option>
+              <option value="Marketer">Marketer</option>
+            </select>
             <textarea
-              name=""
+              name="message"
               id=""
               cols="30"
               rows="10"
               placeholder="Write what you want"
               required
               value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              onChange={handleChange}
             ></textarea>
             <button className="btn" onSubmit={submit}>
               Send Message
