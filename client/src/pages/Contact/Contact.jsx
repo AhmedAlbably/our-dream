@@ -2,7 +2,7 @@ import "./Contact.scss";
 import Navbar from "../../components/NavBar/NavBar";
 import { useRef, useState } from "react";
 import axios from "axios";
-import mu from "../../audio/mony.mp4"
+import mu from "../../audio/mony.mp4";
 
 const Contact = () => {
   const muR = useRef();
@@ -30,8 +30,16 @@ const Contact = () => {
 
       if (response.status === 200) {
         console.log("Email sent successfully!");
-          muR.current.play();
-          muR.current.currentTime = 0;
+        muR.current.play();
+        muR.current.currentTime = 0;
+
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
@@ -39,7 +47,7 @@ const Contact = () => {
   }
   return (
     <section className="contact">
-      <video src={mu} ref={muR} style={{display: "none"}}></video>
+      <video src={mu} ref={muR} style={{ display: "none" }}></video>
       <header>
         <Navbar />
         <span className="cover"></span>
