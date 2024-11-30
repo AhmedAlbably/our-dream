@@ -193,7 +193,7 @@ const Contact = () => {
                 style={{
                   border: errors.message ? "1px solid red" : "",
                 }}
-                className={errors.email && "error"}
+                className={errors.message && "error"}
               ></textarea>
 
               <button className="btn" type="submit">
