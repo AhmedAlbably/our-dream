@@ -29,7 +29,21 @@ const Contact = () => {
     Object.keys(form).forEach((key) => {
       if (!form[key] && key !== "category") {
         newErrors[key] = "This field is required";
-        toast.error(`${key === "phone"? "Phone number" : key} is required`);
+        toast.error(
+          `${
+            key === "phone"
+              ? "Phone number"
+              : key === "firstName"
+              ? "First name"
+              : key === "lastName"
+              ? "Last Name"
+              : key === "email"
+              ? "Email"
+              : key === "message"
+              ? "Message"
+              : key
+          } is required`
+        );
       }
     });
 
@@ -41,7 +55,7 @@ const Contact = () => {
 
     if (form.category === "Contact as a") {
       newErrors.category = "Please select a category";
-      toast.error(`Please select a category`);
+      toast.error(`Please select category`);
     }
 
     if (form.phone && !phoneRegex.test(form.phone)) {
