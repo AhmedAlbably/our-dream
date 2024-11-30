@@ -22,8 +22,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      translate: -50% -50%;
       width: 90%;
+      translate: -50% -50%;
       text-align: center;
     }
   }
@@ -81,7 +81,6 @@
         align-items: center;
         gap: 20px;
 
-
         .first-line {
           display: flex;
           gap: 20px;
@@ -126,6 +125,10 @@
             padding: 10px 20px;
             border: 1px solid #050724;
             border-radius: 10px;
+
+            &:not(:first-child) {
+              color: black !important;
+            }
           }
         }
 
@@ -157,7 +160,8 @@
             color: #011c2a;
             font-weight: bold;
             box-shadow: 0 0 #0000, 0 0 #0000,
-              0 0 40px 6px rgba(0, 178, 255, 0.7);          }
+              0 0 40px 6px rgba(0, 178, 255, 0.7);
+          }
         }
       }
     }
@@ -165,6 +169,13 @@
 }
 
 .error {
+  border-color: red !important;
+  &::placeholder {
+    color: red
+  }
+}
+
+.error-valid {
   color: red;
   font-size: 0.8rem;
   margin-top: 4px;

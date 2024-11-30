@@ -1,11 +1,9 @@
 import "./Contact.scss";
 import Navbar from "../../components/NavBar/NavBar";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import mu from "../../audio/mony.mp4";
-
+import { toast, Toaster } from "react-hot-toast";
 const Contact = () => {
-  const muR = useRef();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -25,17 +23,30 @@ const Contact = () => {
   function validate() {
     const newErrors = {};
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/;
+    const phoneRegex = /^01/;
 
     // تحقق من الحقول الفارغة
     Object.keys(form).forEach((key) => {
       if (!form[key] && key !== "category") {
         newErrors[key] = "This field is required";
+        toast.error(`${key === "phone"? "Phone number" : key} is required`);
       }
     });
 
     // تحقق من صحة البريد الإلكتروني
     if (form.email && !emailRegex.test(form.email)) {
       newErrors.email = "Email is not valid. Must be @gmail.com or @yahoo.com";
+      toast.error(`Email is not valid.`);
+    }
+
+    if (form.category === "Contact as a") {
+      newErrors.category = "Please select a category";
+      toast.error(`Please select a category`);
+    }
+
+    if (form.phone && !phoneRegex.test(form.phone)) {
+      newErrors.phone = "Phone number must start with 01";
+      toast.error(`Phone number is not valid`);
     }
 
     setErrors(newErrors);
@@ -61,10 +72,7 @@ const Contact = () => {
       );
 
       if (response.status === 200) {
-        console.log("Email sent successfully!");
-        muR.current.play();
-        muR.current.currentTime = 0;
-
+        toast.success("Form submitted successfully");
         setForm({
           firstName: "",
           lastName: "",
@@ -74,135 +82,132 @@ const Contact = () => {
           message: "",
         });
       }
-    } catch (error) {
-      console.error("Error:", error);
+    } catch {
+      toast.error("You wrote something wrong");
     }
   }
 
   return (
-    <section className="contact">
-      <video src={mu} ref={muR} style={{ display: "none" }}></video>
-      <header>
-        <Navbar />
-        <span className="cover"></span>
-        <div className="content">
-          <h1 className="title">Contact Informations</h1>
-          <p>
-            Information that allows access to people or companies, such as phone
-            number, email, and address.
-          </p>
-        </div>
-      </header>
+    <>
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        }}
+      />
+      <section className="contact">
+        <header>
+          <Navbar />
+          <span className="cover"></span>
+          <div className="content">
+            <h1 className="title">Contact Informations</h1>
+            <p>
+              Information that allows access to people or companies, such as
+              phone number, email, and address.
+            </p>
+          </div>
+        </header>
 
-      <div className="bottom">
-        <div className="contact-form">
-          <form action="" className="contact" onSubmit={submit}>
-            <div className="first-line">
-              <input
-                type="text"
-                placeholder="First Name"
-                value={form.firstName}
-                name="firstName"
-                onChange={handleChange}
-                style={{
-                  borderColor: errors.firstName ? "red" : "",
-                }}
-              />
-              {errors.firstName && (
-                <span className="error">{errors.firstName}</span>
-              )}
-              <input
-                type="text"
-                placeholder="Last Name"
-                value={form.lastName}
-                name="lastName"
-                onChange={handleChange}
-                style={{
-                  borderColor: errors.lastName ? "red" : "",
-                }}
-              />
-              {errors.lastName && (
-                <span className="error">{errors.lastName}</span>
-              )}
+        <div className="bottom">
+          <div className="contact-form">
+            <div className="contact-information">
+              <div className="overlay"></div>
             </div>
-
-            <div className="second-line">
-              <input
-                type="email"
-                placeholder="Email"
-                value={form.email}
-                name="email"
-                onChange={handleChange}
-                style={{
-                  borderColor: errors.email ? "red" : "",
-                }}
-              />
-              {errors.email && <span className="error">{errors.email}</span>}
-              <div className="phone">
-
-              <input
-                type="text"
-                placeholder="Phone Number"
-                value={form.phone}
-                name="phone"
-                onChange={(e) => {
-                  const input = e.target.value;
-                  if (/^\d*$/.test(input) && input.length <= 11) {
-                    handleChange(e);
-                  }
-                }}
-                style={{
-                  borderColor: errors.phone ? "red" : "",
-                }}
-              />
-              {errors.phone && <div className="error">{errors.phone}</div>}
+            <form action="" className="contact" onSubmit={submit}>
+              <div className="first-line">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={form.firstName}
+                  name="firstName"
+                  onChange={handleChange}
+                  className={errors.firstName && "error"}
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={form.lastName}
+                  name="lastName"
+                  onChange={handleChange}
+                  className={errors.lastName && "error"}
+                />
               </div>
-            </div>
 
-            <select
-              name="category"
-              value={form.category}
-              onChange={handleChange}
-              style={{
-                borderColor: errors.category ? "red" : "",
-              }}
-            >
-              <option value="Contact as a" disabled hidden>
-                Contact as a
-              </option>
-              <option value="client">Client</option>
-              <option value="Marketer">Marketer</option>
-            </select>
-            {errors.category && (
-              <span className="error">{errors.category}</span>
-            )}
+              <div className="second-line">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={form.email}
+                  name="email"
+                  onChange={handleChange}
+                  className={errors.email && "error"}
+                  style={{
+                    color:
+                      errors.email ===
+                        "Email is not valid. Must be @gmail.com or @yahoo.com" &&
+                      "red",
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  value={form.phone}
+                  name="phone"
+                  onChange={(e) => {
+                    const input = e.target.value;
+                    if (/^\d*$/.test(input) && input.length <= 11) {
+                      handleChange(e);
+                    }
+                  }}
+                  className={errors.phone && "error"}
+                />
+              </div>
 
-            <textarea
-              name="message"
-              cols="30"
-              rows="10"
-              placeholder="Write what you want"
-              value={form.message}
-              onChange={handleChange}
-              style={{
-                borderColor: errors.message ? "red" : "",
-              }}
-            ></textarea>
-            {errors.message && <span className="error">{errors.message}</span>}
+              <select
+                name="category"
+                value={form.category}
+                onChange={handleChange}
+                style={{
+                  borderColor: errors.category ? "red" : "",
+                  color: errors.category ? "red" : "",
+                }}
+              >
+                <option value="Contact as a" disabled hidden>
+                  Contact as a
+                </option>
+                <option value="client">Client</option>
+                <option value="Marketer">Marketer</option>
+              </select>
 
-            <button className="btn" type="submit">
-              Send Message
-            </button>
-          </form>
+              <textarea
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Write what you want"
+                value={form.message}
+                onChange={handleChange}
+                style={{
+                  border: errors.message ? "1px solid red" : "",
+                }}
+                className={errors.email && "error"}
+              ></textarea>
+
+              <button className="btn" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
 export default Contact;
-
-
 
 // if (response.status === 200) {
 //   console.log("Email sent successfully!");
