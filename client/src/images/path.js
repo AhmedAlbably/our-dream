@@ -4,6 +4,7 @@ import backgroundOne from "./backgroundOne.png";
 import userImg from "./userTwo.png";
 import quote from "./quote.png";
 import ServicesBanner from "./ServicesBanner.png";
+import aboutUsImg from "./aboutUsImg.png";
 
 const pathImgs = {
   shadowImg,
@@ -11,7 +12,8 @@ const pathImgs = {
   backgroundOne,
   userImg,
   quote,
-  ServicesBanner
+  ServicesBanner,
+  aboutUsImg
 };
 
 export default pathImgs;

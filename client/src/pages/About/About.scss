@@ -1,9 +1,10 @@
 .about {
+  font-family: "Abhaya Libre", serif;
   header {
-    background: url("../../images/aboutHeader.jpg") no-repeat center center;
+    background: url("../../images/aboutHeader.png") no-repeat center center;
     background-size: cover;
     position: relative;
-    height: 100vh;
+    min-height: 500px;
 
     .cover {
       background-color: rgba(5, 7, 36, 74%);
@@ -37,8 +38,113 @@
       }
     }
   }
+
+  .about-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0 20px 130px;
+    overflow: hidden;
+    @media (max-width: 969px) {
+      flex-direction: column;
+      padding: 60px 40px 20px 40px;
+    }
+
+    .about-us-text {
+      width: 100%;
+      @media (max-width: 969px) {
+        text-align: center;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 36px;
+        font-weight: 400;
+        @media (max-width: 969px) {
+          font-size: 28px;
+        }
+        @media (min-width: 440px) and (max-width: 969px) {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        @media (max-width: 570px) {
+          font-size: 20px;
+        }
+
+        span {
+          background-color: #050724;
+          width: 70%;
+          height: 1px;
+          @media (min-width: 440px) and (max-width: 969px) {
+            width: 20%;
+          }
+        }
+      }
+
+      h3 {
+        color: #092c27;
+        max-width: 581px;
+        width: 100%;
+        margin: 30px 0 40px;
+        font-size: 48px;
+        font-weight: bold;
+        @media (max-width: 969px) {
+          max-width: 100%;
+          font-size: 40px;
+        }
+
+        @media (max-width: 570px) {
+          margin: 30px 0 20px;
+          font-size: 30px;
+        }
+      }
+
+      p {
+        color: #525755;
+        max-width: 556px;
+        max-width: 100%;
+        width: 100%;
+        font-size: 24px;
+        font-weight: bold;
+
+        @media (max-width: 969px) {
+          max-width: 100%;
+        }
+
+        @media (max-width: 570px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .about-us-img {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      @media (max-width: 986px) {
+        justify-content: center;
+      }
+
+      .image {
+        background-color: #050724;
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+
+        @media (max-width: 969px) {
+          max-width: 300px;
+        }
+
+        img {
+          width: 100%;
+          translate: -6% 4%;
+        }
+      }
+    }
+  }
 }
-
-
-
-
