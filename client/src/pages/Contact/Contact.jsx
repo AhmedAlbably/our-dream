@@ -1,8 +1,10 @@
 import "./Contact.scss";
 import Navbar from "../../components/NavBar/NavBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Contact = () => {
   const [form, setForm] = useState({
     firstName: "",
@@ -13,11 +15,18 @@ const Contact = () => {
     message: "",
   });
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1400,
+      offset: 1,
+    });
+  });
+
   const [errors, setErrors] = useState({});
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // إزالة رسالة الخطأ عند التعديل
+    setErrors({ ...errors, [e.target.name]: "" });
   }
 
   function validate() {
@@ -25,7 +34,6 @@ const Contact = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/;
     const phoneRegex = /^01/;
 
-    // تحقق من الحقول الفارغة
     Object.keys(form).forEach((key) => {
       if (!form[key] && key !== "category") {
         newErrors[key] = "This field is required";
@@ -47,7 +55,6 @@ const Contact = () => {
       }
     });
 
-    // تحقق من صحة البريد الإلكتروني
     if (form.email && !emailRegex.test(form.email)) {
       newErrors.email = "Email is not valid. Must be @gmail.com or @yahoo.com";
       toast.error(`Email is not valid.`);
@@ -117,7 +124,7 @@ const Contact = () => {
         <header>
           <Navbar />
           <span className="cover"></span>
-          <div className="content">
+          <div className="content"  data-aos="zoom-in">
             <h1 className="title">Contact Informations</h1>
             <p>
               Information that allows access to people or companies, such as
@@ -127,11 +134,11 @@ const Contact = () => {
         </header>
 
         <div className="bottom">
-          <div className="contact-form">
-            <div className="contact-information">
+          <div className="contact-form" >
+            <div className="contact-information"  data-aos="fade-right">
               <div className="overlay"></div>
             </div>
-            <form action="" className="contact" onSubmit={submit}>
+            <form action="" className="contact" onSubmit={submit}  data-aos="fade-up">
               <div className="first-line">
                 <input
                   type="text"

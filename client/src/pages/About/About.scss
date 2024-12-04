@@ -44,7 +44,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    padding: 60px 0 20px 130px;
+    padding: 60px 30px 20px 130px;
     overflow: hidden;
     @media (max-width: 969px) {
       flex-direction: column;
@@ -52,8 +52,9 @@
     }
 
     .about-us-text {
-      width: 100%;
+      width: 60%;
       @media (max-width: 969px) {
+        width: 100%;
         text-align: center;
       }
 
@@ -66,6 +67,11 @@
         @media (max-width: 969px) {
           font-size: 28px;
         }
+
+        @media (max-width: 1068px) {
+          font-size: 26px;
+        }
+
         @media (min-width: 440px) and (max-width: 969px) {
           flex-direction: column;
           gap: 0;
@@ -86,11 +92,12 @@
       }
 
       h3 {
+        // background-color: red;
         color: #092c27;
-        max-width: 581px;
+        max-width: 520px;
         width: 100%;
         margin: 30px 0 40px;
-        font-size: 48px;
+        font-size: 46px;
         font-weight: bold;
         @media (max-width: 969px) {
           max-width: 100%;
@@ -99,7 +106,7 @@
 
         @media (max-width: 570px) {
           margin: 30px 0 20px;
-          font-size: 30px;
+          font-size: 28px;
         }
       }
 

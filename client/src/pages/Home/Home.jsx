@@ -6,12 +6,19 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import pathImgs from "../../images/path";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Home.scss";
 
 function Home() {
   const [width, setWidth] = useState(0);
   const carouselRef = useRef();
   useEffect(() => {
+    AOS.init({
+      duration: 1400,
+      offset: 1,
+    });
+
     function sliderWidth() {
       setWidth(
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
@@ -39,7 +46,7 @@ function Home() {
         <NavBar />
 
         <div className="content">
-          <div className="left-side">
+          <div className="left-side" data-aos="fade-up">
             <h1>Enjoy the freedom of freelancing and find the best talent</h1>
             <p>
               Whether you are looking for a creative designer, Professional
@@ -50,20 +57,20 @@ function Home() {
             </p>
             <Link to="/contact">Start</Link>
           </div>
-          <div className="right-side">
+          <div className="right-side" data-aos="fade-up">
             <img src={pathImgs.bannerHomeHeader} alt="" />
           </div>
         </div>
       </header>
 
       <section className="choose-us">
-        <header>
-          <h3>Why Choose Us</h3>
+        <header data-aos="fade-down">
+          <h3><span></span>Why Choose Us<span></span></h3>
           <h2>We Serve Professionally</h2>
         </header>
 
         <div className="cards">
-          <div className="card">
+          <div className="card" data-aos="fade-up" data-aos-delay="100">
             <div className="image">
               <FontAwesomeIcon icon={faShieldHalved} />
             </div>
@@ -74,7 +81,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="card">
+          <div className="card" data-aos="fade-up" data-aos-delay="200">
             <div className="image">
               <FontAwesomeIcon icon={faCheck} />
             </div>
@@ -82,7 +89,7 @@ function Home() {
             <p>Our rating and review system helps you hire with confidence</p>
           </div>
 
-          <div className="card">
+          <div className="card" data-aos="fade-up" data-aos-delay="300">
             <div className="image">
               <FontAwesomeIcon icon={faClock} />
             </div>
@@ -93,16 +100,16 @@ function Home() {
       </section>
 
       <section className="how-work">
-        <header>
+        <header data-aos="fade-down">
           <h3>Howe work it</h3>
         </header>
 
         <div className="content">
-          <div className="left-side">
+          <div className="left-side" data-aos="fade-up">
             <img src={pathImgs.backgroundOne} alt="" />
           </div>
 
-          <div className="right-side">
+          <div className="right-side" data-aos="fade-up">
             <header>
               <h3>Howe work it</h3>
             </header>
@@ -157,11 +164,12 @@ function Home() {
       </section>
 
       <section className="reviews">
-        <h2>REVIEWS</h2>
+        <h2 data-aos="fade-down">REVIEWS</h2>
         <motion.div
           className="carousel"
           ref={carouselRef}
           whileTap={{ cursor: "grabbing" }}
+          data-aos="fade-up"
         >
           <motion.div
             drag="x"
